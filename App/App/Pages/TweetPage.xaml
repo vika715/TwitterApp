@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Pages.TweetPage"
+             BackgroundColor="White">
+  <ScrollView>
+      <StackLayout
+          Orientation="Vertical"
+          Padding="16">
+            <StackLayout
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Horizontal">
+                  <Image x:Name="profileImage"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start"
+                     WidthRequest="50"
+                     HeightRequest="50"/>
+                     <Label x:Name="nameUserLabel"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Start"/>
+              </StackLayout>
+          <Label x:Name="textTweetLabel"
+            TextColor="Black"/>
+      </StackLayout>
+  </ScrollView>
+</ContentPage>  

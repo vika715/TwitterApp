@@ -1,0 +1,13 @@
+/packages
+/App/App/bin
+/App/App/obj
+/App/App.iOS/bin
+/App/App.iOS/obj
+/App/App.Droid/bin
+/App/App.Droid/obj
+/App/App.UWP/bin
+/App/App.UWP/obj
+/tApp/App.Windows/bin
+/App/App.Windows/obj
+/App/App.WinPhone/bin
+/App/App.WinPhone/obj
