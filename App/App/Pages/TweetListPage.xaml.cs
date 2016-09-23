@@ -56,22 +56,11 @@ namespace App.Pages
                 profileImage.HorizontalOptions = LayoutOptions.StartAndExpand;
                 profileImage.VerticalOptions = LayoutOptions.StartAndExpand;
 
-               /*  sourceImage = new UriImageSource();
-                 profileImage.BackgroundColor = Color.FromHex("#f216f2");
-                 sourceImage.SetBinding(UriImageSource.UriProperty, new Binding("User.ProfileImageUrl"));
-                 sourceImage.CachingEnabled = true;
-                 sourceImage.CacheValidity = new TimeSpan(5, 0, 0, 0);
-                 tweetImage.Source = sourceImage;
-                // tweetImage.WidthRequest = 50;
-                 tweetImage.HeightRequest = 150;
-                 tweetImage.HorizontalOptions = LayoutOptions.CenterAndExpand;
-                 tweetImage.VerticalOptions = LayoutOptions.StartAndExpand;*/
-
-                 grid.Children.Add(profileImage, 0, 0);
-                 Grid.SetRowSpan(profileImage, 2);
-                 grid.Children.Add(name, 1, 0);
-                 grid.Children.Add(message, 1, 1);
-                 View = grid;                 
+                grid.Children.Add(profileImage, 0, 0);
+                Grid.SetRowSpan(profileImage, 2);
+                grid.Children.Add(name, 1, 0);
+                grid.Children.Add(message, 1, 1);
+                View = grid;                 
             }
 
           

@@ -11,7 +11,9 @@ namespace App
     {
         public App()
         {
-            MainPage = new NavigationPage();
+            var mainPage = new NavigationPage();
+            mainPage.BarBackgroundColor = Color.FromHex("#139DEA");
+            MainPage = mainPage;
             MainPage.Navigation.PushAsync(new LoginPage());
        }
 

@@ -20,7 +20,7 @@
     
     <Button Text="Log in with Twitter"
             TextColor="White"
-            BackgroundColor="#01579B"
+            BackgroundColor="#139DEA"
             HorizontalOptions="Center"
             FontSize="14"
             Clicked="OnClickLoginButton"/>
