@@ -2,8 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.Pages.TweetListPage"
+             xmlns:local="clr-namespace:App.Converters;assembly=App"
              BackgroundColor="White">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:StringToUriConverter x:Key="uriConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <ListView
-    x:Name="listView">
+    x:Name="listView"  
+    HasUnevenRows = "true">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+          <Grid
+            Padding="16">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="0.2*"> </ColumnDefinition>
+              <ColumnDefinition Width="0.8*"> </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="1*"> </RowDefinition>
+              <RowDefinition Height="2*"> </RowDefinition>
+            </Grid.RowDefinitions>
+            <Image 
+	            HorizontalOptions="StartAndExpand"
+	            VerticalOptions ="StartAndExpand"
+              WidthRequest="50"
+              HeightRequest="50"
+              Grid.Column="0"
+              Grid.Row="0"
+              Grid.RowSpan="2">
+	            <Image.Source>
+		            <UriImageSource 
+                  Uri="{ Binding User.ProfileImageUrlHttps, Converter={ StaticResource uriConverter }}" 
+			            CacheValidity="14" 
+			            CachingEnabled="true"/>
+	            </Image.Source>
+            </Image>
+            <Label
+              Text="{ Binding User.Name }"
+              TextColor="Black"
+              Grid.Column="1"
+              Grid.Row="0"/>
+            <Label
+              Text="{ Binding Text }"
+              TextColor="Black"
+              Grid.Column="1"
+              Grid.Row="1"/>
+          </Grid>
+             </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
   </ListView>
 </ContentPage>

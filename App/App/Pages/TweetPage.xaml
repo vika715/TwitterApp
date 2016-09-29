@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.Pages.TweetPage"
+             xmlns:local="clr-namespace:App.Converters;assembly=App"
              BackgroundColor="White">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:StringToUriConverter x:Key="uriConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <ScrollView>
       <StackLayout
           Orientation="Vertical"
@@ -10,16 +16,25 @@
             <StackLayout
                   HorizontalOptions="FillAndExpand"
                   Orientation="Horizontal">
-                  <Image x:Name="profileImage"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start"
-                     WidthRequest="50"
-                     HeightRequest="50"/>
-                     <Label x:Name="nameUserLabel"
-                       TextColor="Black"
-                       HorizontalTextAlignment="Start"/>
-              </StackLayout>
-          <Label x:Name="textTweetLabel"
+              <Image
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 WidthRequest="50"
+                 HeightRequest="50">
+                <Image.Source>
+                  <UriImageSource
+                    Uri="{ Binding User.ProfileImageUrlHttps, Converter={ StaticResource uriConverter }}"
+			              CacheValidity="14"
+			              CachingEnabled="true"/>
+                </Image.Source>
+              </Image>
+              <Label 
+                Text ="{ Binding User.Name }"
+                TextColor="Black"
+                HorizontalTextAlignment="Start"/>
+          </StackLayout>
+          <Label 
+            Text ="{ Binding Text }"
             TextColor="Black"/>
       </StackLayout>
   </ScrollView>
